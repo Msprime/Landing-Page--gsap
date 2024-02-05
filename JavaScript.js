@@ -1,53 +1,54 @@
-// gsap=grrensock Animation platform
-// if u have multiple Animations u can use stagger to make run one by one
-// there is also 1 property name repeat to repeat the Animation
-// to tackle the bad Animation effect from repeat u can use "yoyo:true" property
-// let tl=gsap.timeline();
-// tl.to(".box",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
-// tl.to(".box1",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
-// tl.to(".box2",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
-
 let tl=gsap.timeline();
-tl.from(".part-1,.part-2 h3,.part-3 h4,.part-3 button",{
-    // x:-180,
-    y:-100,
-    duration:1,
-    delay:1,
+tl.from("nav",{
     opacity:0,
-    stagger:0.2
+    delay:0.3
+})
+tl.from("nav h2,.nav-p2 h3,.nav-p3 h4,.nav-p3 button",{
+    y:-80,
+    duration:0.6,
+    stagger:0.3,
+    opacity:0
 });
-tl.from("#main h1",{
-    y:100,
+tl.from(".left,.left span",{
+    x:-500,
+    duration:1,
     stagger:0.5,
     opacity:0
-})
-tl.from("#main>img",{
-    scale:0,
-    opacity:0,
-    stagger:0.3
-})
-tl.from("h5",{
-    scale:0,
+});
+tl.from(".right img",{
+    scale:0.5,
     opacity:0
 })
-tl.to("h5",{
-    y:30,
-    repeat:-1,
-    duration:0.7,
-    yoyo:true
+// tl.from(".page-2 .box",{
+//     scale:0,
+//     opacity:0,
+//     duration:1,
+//     stagger:0.3,
+//     scrollTrigger:{
+//         trigger:".page-2 .box",
+//         scroller:"body"
+//     }
+// })
+tl.from(".page-2 h1",{
+    y:-60,
+    duration:1,
+    opacity:0
+})
+tl.from(".box1",{
+    x:-20,
+    duration:0.5,
+    opacity:0,
+    // stagger:0.4
+})
+tl.from(".box2",{
+    y:20,
+    duration:0.5,
+    opacity:0,
+    // stagger:0.4
+})
+tl.from(".box3",{
+    x:20,
+    duration:0.5,
+    opacity:0,
+    // stagger:0.4
 })
