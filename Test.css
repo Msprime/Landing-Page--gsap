@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+nav{
+    height: 80px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 30px;
+}
+nav .part-1,.part-2,.part-3{
+    display: flex;
+}
+.part-1 h2{
+    margin-top: 20px;
+    padding-left: 5px;
+}
+.part-3 h4{
+    margin-top: 3px;
+}
+nav .part-2{
+    gap: 40px;
+    font-weight: 0;
+}
+nav .part-3{
+    gap: 20px;
+}
+.part-3 button{
+    padding: 3px 7px;
+}
+nav img{
+    /* width: 80px; */
+    height: 80px;
+}
+#main h1{
+    font-size: 75px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+#main h1 span{
+    background-color: lightskyblue;
+    color: black;
+    /* background-color: rgb(176, 122, 64); */
+    border-radius: 50px;
+    padding: 3px 9px;
+    margin: 0 20px;
+    font-size: 30px;
+    font-weight: 300;
+}
+#main h1:nth-child(2){
+    margin-top: 35px;
+}
+#main h1:nth-child(4){
+    position: relative;
+    z-index: 9;
+    mix-blend-mode:hard-light;
+}
+#top-img{
+    height: 280px;
+    position: absolute;
+    left: 3%;
+    top: 41%;
+}
+/* #left-img{
+    height: 180px;
+    position: absolute;
+    left: 80%;
+    top: 60%;
+} */
+#bottom-img{
+    height: 250px;
+    position: absolute;
+    right: 3%;
+    top: 24%;
+}
+h5{
+    position: absolute;
+    left: 50%;
+    font-size: 20px;
+    bottom: 15%;
+    transform: translate(-50%,0);
+}
