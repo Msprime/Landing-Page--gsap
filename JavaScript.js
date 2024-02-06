@@ -1,53 +1,53 @@
-// gsap=grrensock Animation platform
-// if u have multiple Animations u can use stagger to make run one by one
-// there is also 1 property name repeat to repeat the Animation
-// to tackle the bad Animation effect from repeat u can use "yoyo:true" property
-// let tl=gsap.timeline();
-// tl.to(".box",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
-// tl.to(".box1",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
-// tl.to(".box2",{
-//     x:700,
-//     duration:2,
-//     repeat:1,
-//     yoyo:true
-// });
+gsap.to(".p1 h1",{
+    transform:"translateX(-100%)",
+    fontWeight:"100",
+    scrollTrigger:{
+        scroller:"body",
+        trigger:".p1",
+        // markers:true,
+        start:"top 0",
+        end:"top -200",
+        //scrub for smoothing
+        scrub:3,
+        //pin is used for jab tak full animation nhi ho jata tabtak pin rakho page ko
+        pin:true
+    },
+    // opacity:0,
+})
 
 let tl=gsap.timeline();
-tl.from(".part-1,.part-2 h3,.part-3 h4,.part-3 button",{
-    // x:-180,
-    y:-100,
+function time(){
+    let a=0;
+    setInterval(function(){
+        a=a+Math.floor(Math.random()*15);
+        if(a<100){
+        document.querySelector(".loader h1").innerHTML=a+"%";
+        }else{
+            a=100;
+            document.querySelector(".loader h1").innerHTML=a+"%";
+        }
+    },60);
+}
+
+tl.to(".loader h1",{
+    scale:1.2,
+    delay:0,
+    duration:0,
+    onStart:time(),
+})
+tl.to(".loader #hel",{
+    x:-1000,
     duration:1,
-    delay:1,
-    opacity:0,
-    stagger:0.2
-});
-tl.from("#main h1",{
-    y:100,
-    stagger:0.5,
-    opacity:0
+    delay:0.1
 })
-tl.from("#main>img",{
-    scale:0,
-    opacity:0,
-    stagger:0.3
+tl.to(".loader h1,.loader #hel",{
+    display:"none"
 })
-tl.from("h5",{
-    scale:0,
-    opacity:0
+tl.to(".loader #bye",{
+    display:"block"
 })
-tl.to("h5",{
-    y:30,
-    repeat:-1,
-    duration:0.7,
-    yoyo:true
+tl.to(".loader",{
+    top:"-100vh",
+    delay:0.2,
+    duration:0.8
 })
